@@ -107,3 +107,7 @@ Metrics at time of writing:
   - F1 Score - 0.99
 
 MLPClassifier is the best amongst the models as it has the highest accuracy and the highest F1 score. Despite the dataset being slightly skewed towards non-survivors, the F1 score shows that there is little misclassification in important output (more true positives and lesser false negatives)
+
+
+
+## Updates

@@ -115,3 +115,4 @@ MLPClassifier is the best amongst the models as it has the highest accuracy and 
 2) Updated the code for the correlation matrix
 3) Updated the code for Encoding Categorical Features
 4) Updated the models used
+5) Added Feature Importance section 

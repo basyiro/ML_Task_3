@@ -27,14 +27,10 @@ Email address: basyir.othman@u.nus.edu
 1. From the source folder, run `pip3 install -r requirements.txt`. This should load up all necessary dependencies for the EDA and for the main program
 2. Run `./run.sh`. If there is an error, try running `chmod u+x run.sh` first
 
-Within the pipeline, 3 models from `scikit-learn` are used (`MLPClassifier`, `RandomForestClassifer` and `SVC` (SupportVectorClassifier)). If you wish to test other models from `scikit-learn` out (or try other hyperparameters):<br>
+Within the pipeline, 3 models from `scikit-learn` are used (`KNeighborsClassifier`, `RandomForestClassifer` and `MLPClassifier`). If you wish to test other models from `scikit-learn` out (or try other hyperparameters):<br>
 
 1. Navigate to `src/models.py` and import the relevant model from `scikit-learn`
 2. Go to the function `define_models` and add your model
-
-## d. Description of logical steps/flow of the pipeline.
-
-![alt text](./src/diagrams/pipeline.png)
 
 ### 1. Preprocessing
 
@@ -86,27 +82,27 @@ Within the pipeline, 3 models from `scikit-learn` are used (`MLPClassifier`, `Ra
 
 3 models were used for evaluation, MLPClassifier (Neural Network), RandomForestClassifier, AdaBoostClassifier
 
-1. MLPClassifier:
-   - Neural networks with perform quite well on classification tasks with distinct features and are easily customizable by varying the number of hidden neurons and hidden layers to improve performance on the task
+1. KNeighborsClassifier:
+   - K Nearest Neighbours is simple and and easy classifier to interpret.
 2. RandomForestClassifier:
    - Decision trees are usually good at separating features according to how much a certain feature plays a part in determining the output. By combining many decision trees (random forest), we can aggregate a good model output
-3. AdaBoostClassifier:
-   - AdaBoost is good at combining weak learners into a single strong classifier. Adaboost would work well with using the other classifiers above and thus would naturally be a good model to use.
+3. MLPClassifier:
+   - Neural networks with perform quite well on classification tasks with distinct features and are easily customizable by varying the number of hidden neurons and hidden layers to improve performance on the task
 ## **g. Evaluation of the models developed.**
 
 Metrics at time of writing:
 
-- MLPClassifier
-  - Accuracy - 99.85%
-  - F1 Score - 1.00
-- RandomForestClassifier
-  - Accuracy - 90.48%
-  - F1 Score - 0.83
-- AdaBoostClassifier
-  - Accuracy - 99.14%
-  - F1 Score - 0.99
+    - KNeighborsClassifier:
+        - Accuracy - 91.57%
+        - F1 Score - 0.87
+    - RandomForestClassifier:
+        - Accuracy - 99.95%
+        - F1 Score - 1.00
+    - MLPClassifier:
+        - Accuracy - 91.95%%
+        - F1 Score - 0.87
 
-MLPClassifier is the best amongst the models as it has the highest accuracy and the highest F1 score. Despite the dataset being slightly skewed towards non-survivors, the F1 score shows that there is little misclassification in important output (more true positives and lesser false negatives)
+RandomForestClassifier is the best amongst the models as it has the highest accuracy and the highest F1 score. It is also depicted to have the best performance from observing the ROC curves.
 
 
 
